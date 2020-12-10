@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-'''0-lockboxes'''
-
+"""0-lockboxes"""
 
 def canUnlockAll(boxes):
-    ''' i can do all '''
+    """ i can do all """
     if len(boxes) == 0:
         return False
     if type(boxes) is not list:

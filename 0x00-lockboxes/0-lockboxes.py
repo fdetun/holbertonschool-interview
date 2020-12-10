@@ -13,8 +13,9 @@ def canUnlockAll(boxes):
     for i in arr:
         if i == 0 or i in arr :
             for j in boxes[i]:
-                if j <= lenbox and j not in arr:
-                    arr.append(j)
+                if type(j) is int:
+                    if j <= lenbox and j not in arr:
+                        arr.append(j)
     if len(arr) == lenbox:
         return True
     else:

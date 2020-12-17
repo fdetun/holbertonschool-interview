@@ -25,11 +25,20 @@ new->next = NULL;
 
 if (*head == NULL)
 *head = new;
+if (current->n > number)
+{
+new->next = current;
+*head = new;
+return (*head);
+}
+
 else
 {
 
-while (current->next->n < number)
+while (current->next != NULL && current->next->n < number)
+{    
 current = current->next;
+}
 new->next = current->next;
 current->next = new;
 }

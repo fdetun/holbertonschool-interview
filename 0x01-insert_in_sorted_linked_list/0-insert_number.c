@@ -24,7 +24,10 @@ new->n = number;
 new->next = NULL;
 
 if (*head == NULL)
+{
+    *head = new;
 return new;
+}
 if (current->n > number)
 {
 new->next = current;

@@ -27,7 +27,6 @@ if (current->n > number)
 {
 new->next = current;
 *head = new;
-return (*head);
 }
 
 else

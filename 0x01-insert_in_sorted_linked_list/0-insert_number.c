@@ -17,12 +17,14 @@ listint_t *current;
 current = *head;
 
 new = malloc(sizeof(listint_t));
-if (new == NULL || *head == NULL)
+if (new == NULL)
 return (NULL);
 
 new->n = number;
 new->next = NULL;
 
+if (*head == NULL)
+return new;
 if (current->n > number)
 {
 new->next = current;

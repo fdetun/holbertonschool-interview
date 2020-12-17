@@ -17,7 +17,7 @@ listint_t *current;
 current = *head;
 
 new = malloc(sizeof(listint_t));
-if (new == NULL)
+if (new == NULL || *head == NULL)
 return (NULL);
 
 new->n = number;
@@ -28,17 +28,12 @@ if (current->n > number)
 new->next = current;
 *head = new;
 }
-
 else
 {
-
 while (current->next != NULL && current->next->n < number)
-{    
 current = current->next;
-}
 new->next = current->next;
 current->next = new;
 }
-
 return (new);
 }

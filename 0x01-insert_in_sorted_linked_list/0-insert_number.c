@@ -23,8 +23,6 @@ return (NULL);
 new->n = number;
 new->next = NULL;
 
-if (*head == NULL)
-*head = new;
 if (current->n > number)
 {
 new->next = current;

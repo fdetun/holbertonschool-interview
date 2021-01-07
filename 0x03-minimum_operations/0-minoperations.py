@@ -8,6 +8,7 @@ def minOperations(n):
     if n < 2:
         return 0
     while i < n + 1:
-        i = i + 1
         if n % i == 0:
             return minOperations(n // i) + i
+        i = i + 1
+

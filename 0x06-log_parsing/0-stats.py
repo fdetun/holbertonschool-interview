@@ -19,10 +19,12 @@ mydict = {
 file_size = 0
 try:
     for n, line in enumerate(fileinput.input()):
-        status_code = line.split()[len(line.split()) - 2]
-        file_size += int(line.split()[len(line.split()) - 1])
-        if status_code in mydict:
-            mydict[str(status_code)] += 1
+        _line = line.split()
+        if len(_line) > 2:
+            status_code = _line[len(_line) - 2]
+            file_size += int(_line[len(_line) - 1])
+            if status_code in mydict:
+                mydict[str(status_code)] += 1
         if n % 10 == 0:
             print("File size: {}".format(file_size))
             for k, v in mydict.items():
@@ -39,8 +41,8 @@ try:
                 "500": 0}
 except KeyboardInterrupt:
     pass
-print('File size: {}'.format(file_size))
-for k, v in mydict.items():
-    if v > 0:
-        print("{}: {}".format(k, v))
-
+finally:
+    print('File size: {}'.format(file_size))
+    for k, v in mydict.items():
+        if v > 0:
+            print("{}: {}".format(k, v))

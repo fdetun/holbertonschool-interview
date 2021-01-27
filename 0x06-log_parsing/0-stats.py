@@ -25,13 +25,13 @@ try:
                 mydict[str(status_code)] += 1
         if n % 10 == 0:
             print("File size: {}".format(file_size))
-            for k, v in mydict.items():
-                if v > 0:
-                    print("{}: {}".format(k, v))
+            for k in sorted(mydict):
+                if mydict[k] > 0:
+                    print("{}: {}".format(k, mydict[k]))
 except KeyboardInterrupt:
     pass
 finally:
     print('File size: {}'.format(file_size))
-    for k, v in mydict.items():
-        if v > 0:
-            print("{}: {}".format(k, v))
+    for k in sorted(mydict):
+        if mydict[k] > 0:
+            print("{}: {}".format(k, mydict[k]))

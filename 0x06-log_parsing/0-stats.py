@@ -3,8 +3,6 @@
 
 
 import sys
-import fileinput
-from pathlib import Path
 
 
 mydict = {
@@ -18,7 +16,7 @@ mydict = {
     "500": 0}
 file_size = 0
 try:
-    for n, line in enumerate(fileinput.input()):
+    for n, line in enumerate(sys.stdin, 1):
         _line = line.split()
         if len(_line) > 2:
             status_code = _line[len(_line) - 2]

@@ -17,8 +17,8 @@ mydict = {
 file_size = 0
 for n, line in enumerate(fileinput.input()):
     status_code = line.split()[len(line.split()) - 2]
+    file_size += int(line.split()[len(line.split()) - 1])
     if status_code in mydict:
-        file_size += int(line.split()[len(line.split()) - 1])
         mydict[str(status_code)] += 1
     if n % 10 == 0:
         print("File size: {}".format(file_size))
@@ -34,4 +34,3 @@ for n, line in enumerate(fileinput.input()):
             "404": 0,
             "405": 0,
             "500": 0}
-        file_size = 0

@@ -22,7 +22,7 @@ while (a && b && b->next)
 if (a == b->next)
 return (1);
 a = a->next;
-b = a->next->next;
+b = b->next->next;
 }
 return (0);
 }

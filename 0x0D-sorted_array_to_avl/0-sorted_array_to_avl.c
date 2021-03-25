@@ -48,7 +48,7 @@ if (array == NULL)
 return (NULL);
 if (size)
 {
-fde = create_new_node(array, 0, size - 1, NULL);
+fde = neonode(array, 0, size - 1, NULL);
 return (fde);
 }
 return (NULL);

@@ -6,7 +6,7 @@
 * @beg: beg
 * @n: array size
 *
-* Return: 
+* Return: void
 */
 void pr(int *tab, size_t beg, size_t n)
 {

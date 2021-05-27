@@ -6,6 +6,7 @@ from copy import deepcopy
 
 
 def rotate_2d_matrix(matrix):
+    """procedure to rotoate a giving matrix"""
     arr = deepcopy(matrix)
     l = len(matrix)
     for i in range(l):

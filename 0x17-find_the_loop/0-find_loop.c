@@ -11,7 +11,7 @@ listint_t *a = head;
 listint_t *b = head;
 if (!head)
 return (0);
-do{
+do {
 a = a->next;
 if (a == NULL)
 return (NULL);
@@ -19,7 +19,7 @@ a = a->next;
 if (a == NULL)
 return (NULL);
 b = b->next;
-}while (a != b);
+} while (a != b);
 a = head;
 while (a != b)
 {

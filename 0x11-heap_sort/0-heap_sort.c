@@ -19,8 +19,8 @@ fde = parent;
 if (tab[fde] < tab[fils])
 fde = fils;
 
-if (fils + 1 <= fin && tab[swp] < tab[fils + 1])
-swp = fils + 1;
+if (fils + 1 <= fin && tab[fde] < tab[fils + 1])
+fde = fils + 1;
 
 if (fde != parent)
 {

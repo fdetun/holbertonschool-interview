@@ -21,7 +21,7 @@ for (inc = f; inc < dt; inc++)
 {
 if (a < d && (b >= dt || (backup[a] <= backup[b])))
 {
-tab[inc] = backup[i];
+tab[inc] = backup[inc];
 a += 1;
 }
 else

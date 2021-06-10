@@ -11,30 +11,31 @@
 * @dt: last.
 * @tab: tab.
 */
-void secondfunc(int *backup, int f, int d, int dt, int *tab)
+void seconfunc(int *tab, int beg, int f, int end, int *tabb)
 {
-int inc;
-int a = f;
-int b = d;
+int ok;
+int i = beg;
+int j = f;
 
-for (inc = f; inc < dt; inc++)
+for (ok = beg; ok < end; ok++)
 {
-if (a < d && (b >= dt || (backup[a] <= backup[b])))
+if (i < f && (j >= end || (tab[i] <= tab[j])))
 {
-tab[inc] = backup[inc];
-a += 1;
+tabb[ok] = tab[i];
+i += 1;
 }
 else
 {
-tab[inc] = backup[b];
-b += 1;
+tabb[ok] = tab[j];
+j += 1;
 }
 }
-for (inc = f; inc < dt; inc++)
+for (ok = beg; ok < end; ok++)
 {
-backup[inc] = tab[inc];
+tab[ok] = tabb[ok];
 }
 }
+
 /**
 * fdefunc - fdefunc.
 *
@@ -71,7 +72,7 @@ printf(", ");
 }
 printf("\n");
 
-secondfunc(tab, a, f, b, backup);
+seconfunc(tab, a, f, b, backup);
 
 printf("[Done]: ");
 for (i = a; i < b; i++)

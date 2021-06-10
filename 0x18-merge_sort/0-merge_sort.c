@@ -3,13 +3,13 @@
 #include "sort.h"
 
 /**
-* secondfunc - Sort array A[] using array B[].
+* seconfunc - seconfunc.
 *
-* @backup: backup
+* @tab: tab
+* @beg: beg.
 * @f: f.
-* @d: d.
-* @dt: last.
-* @tab: tab.
+* @end: end.
+* @tabb: tabb.
 */
 void seconfunc(int *tab, int beg, int f, int end, int *tabb)
 {

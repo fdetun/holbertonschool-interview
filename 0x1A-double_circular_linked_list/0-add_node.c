@@ -8,35 +8,35 @@
 
 List *add_node_end(List **list, char *str)
 {
-	List *newNode, *head, *tail;
+	List *new, *start, *end;
 
 	if (!str)
 	return (NULL);
 
 
-	newNode = malloc(sizeof(List));
-	if (!newNode)
+	new = malloc(sizeof(List));
+	if (!new)
 	return (NULL);
-	newNode->str = strdup(str);
-	if (!newNode->str)
+	new->str = strdup(str);
+	if (!new->str)
 	return (NULL);
 
 	if (!list || *list == NULL)
 	{
-		newNode->next = newNode;
-		newNode->prev = newNode;
-		*list = newNode;
-		return (newNode);
+		new->next = new;
+		new->prev = new;
+		*list = new;
+		return (new);
 	}
 
-	head = *list;
-	tail = head->prev;
-	newNode->next = head;
-	newNode->prev = tail;
-	tail->next = newNode;
-	head->prev = newNode;
+	start = *list;
+	end = head->prev;
+	new->next = start;
+	new->prev = end;
+	end->next = new;
+	start->prev = new;
 
-	return (newNode);
+	return (new);
 
 }
 

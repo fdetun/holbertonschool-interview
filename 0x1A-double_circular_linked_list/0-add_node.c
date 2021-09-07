@@ -1,5 +1,7 @@
 #include "list.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * add_node_end - add node to the end
  * @list: list

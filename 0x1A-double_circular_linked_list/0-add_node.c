@@ -1,8 +1,8 @@
 #include "list.h"
 /**
- * add_node_end - add node to the end
- * @list: list
- * @str: node to add
+ * add_node_end - add node at the end
+ * @list: the list to edit
+ * @str: the node to add
  * Return: list or NULL
  */
 
@@ -30,7 +30,7 @@ List *add_node_end(List **list, char *str)
 	}
 
 	start = *list;
-	end = head->prev;
+	end = start->prev;
 	new->next = start;
 	new->prev = end;
 	end->next = new;
@@ -41,12 +41,12 @@ List *add_node_end(List **list, char *str)
 }
 
 /**
- * add_node_begin - Print informations about each element of a list
+ * add_node_begin - Add a new node to the beginning
  *
- * @list: A pointer to the head of the linkd list
- * @str: Node content to add
+ * @list: A the list to edit
+ * @str: Node content
  *
- * Return: void
+ * Return: list or NULL
  */
 List *add_node_begin(List **list, char *str)
 {
@@ -72,7 +72,7 @@ List *add_node_begin(List **list, char *str)
 	}
 
 	start = *list;
-	end = head->prev;
+	end = start->prev;
 	new->next = start;
 	new->prev = end;
 	end->next = new;

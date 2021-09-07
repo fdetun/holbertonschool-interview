@@ -5,19 +5,19 @@ Given a pile of coins of different values, determine the fewest number of coins 
 
 
 def makeChange(coins, total):
-    """return the fewest number of coins needed to meet a given amount
+    """determine the fewest number of coins needed to meet a given amount total.
     """
     if total <= 0:
         return -1
     coins.sort()
     coins.reverse()
-    counter = 0
-    for piece in coins:
+    pieces = 0
+    for coin in coins:
         if total <= 0:
             break
-        buff = total // piece
-        counter += total // piece
-        total -= (total // piece) * piece
+        rest = total // coin
+        pieces += total // coin
+        total -= (total // coin) * coin
     if total != 0:
         return -1
-    return counter
+    return pieces

@@ -1,7 +1,4 @@
 #include "list.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 /**
  * add_node_end - add node to the end
  * @list: list
@@ -11,74 +8,76 @@
 
 List *add_node_end(List **list, char *str)
 {
-List *new = NULL;
+	List *newNode, *head, *tail;
 
-	new = malloc(sizeof(List));
-	if (!new)
-		return (NULL);
+	if (!str)
+	return (NULL);
 
-	new->str = strdup(str);
-	if (!new->str)
+
+	newNode = malloc(sizeof(List));
+	if (!newNode)
+	return (NULL);
+	newNode->str = strdup(str);
+	if (!newNode->str)
+	return (NULL);
+
+	if (!list || *list == NULL)
 	{
-		free(new);
-		return (NULL);
+		newNode->next = newNode;
+		newNode->prev = newNode;
+		*list = newNode;
+		return (newNode);
 	}
-	new->next = NULL;
-	new->prev = NULL;
 
-if (!(*list))
-{
-new->next = new;
-new->prev = new;
-*list = new;
-}
-	else
-	{
-		new->next = (*list);
-		new->prev = (*list)->prev;
-		(*list)->prev->next = new;
-		(*list)->prev = new;
-	}
-	return (new);
+	head = *list;
+	tail = head->prev;
+	newNode->next = head;
+	newNode->prev = tail;
+	tail->next = newNode;
+	head->prev = newNode;
+
+	return (newNode);
+
 }
 
 /**
- * add_node_begin - add node at the begin of the list
- * @list: list
- * @str: node to add
- * Return: list or NULL
+ * add_node_begin - Print informations about each element of a list
+ *
+ * @list: A pointer to the head of the linkd list
+ * @str: Node content to add
+ *
+ * Return: void
  */
-
 List *add_node_begin(List **list, char *str)
 {
-List *new = NULL;
+	List *new, *start, *end;
+
+	if (!str)
+	return (NULL);
+
 
 	new = malloc(sizeof(List));
 	if (!new)
-		return (NULL);
-
+	return (NULL);
 	new->str = strdup(str);
 	if (!new->str)
-	{
-		free(new);
-		return (NULL);
-	}
-	new->next = NULL;
-	new->prev = NULL;
+	return (NULL);
 
-if (!(*list))
-{
-newn->next = new;
-newn->prev = new;
-*list = new;
-}
-	else
+	if (!list || !*list)
 	{
-		new->next = (*list);
-		new->prev = (*list)->prev;
-		(*list)->prev->next = new;
-		(*list)->prev = new;
-*list = new;
+		new->next = new;
+		new->prev = new;
+		*list = new;
+		return (new);
 	}
+
+	start = *list;
+	end = head->prev;
+	new->next = start;
+	new->prev = end;
+	end->next = new;
+	start->prev = new;
+	*list = new;
+
 	return (new);
 }

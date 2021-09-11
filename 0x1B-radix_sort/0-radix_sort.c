@@ -11,7 +11,8 @@ void radix_sort(int *array, size_t size)
 {
 size_t i;
 long api = 1;
-int *back, ok = INT_MIN;
+int *back = INT_MIN;
+int ok = INT_MIN;
 
 if (size < 2 || !array)
 return;

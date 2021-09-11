@@ -25,7 +25,7 @@ ok = array[i] > ok ? array[i] : ok;
 
 while (ok / api > 0)
 {
-cd_sort(array, size, back, api);
+newfunc(array, size, back, api);
 print_array(array, size);
 api *= 10;
 }

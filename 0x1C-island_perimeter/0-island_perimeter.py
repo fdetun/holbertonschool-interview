@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from collections import deque
 """island perimetre script"""
 
 
@@ -8,8 +7,11 @@ def island_perimeter(grid):
     island_perimeter func
     """
     s = 0
-    for line in grid + list(map(deque, zip(*grid))):
-        for l, k in zip([0] + line, line + [0]):
-            if l != k:
-                s += 1
+    p = list(map(list, zip(*grid)))
+    for line in grid + p:
+        l = [0] + line
+        r = line + [0]
+        for h, k in zip(l, r):
+            if (h != k):
+                s = s + 1
     return s
